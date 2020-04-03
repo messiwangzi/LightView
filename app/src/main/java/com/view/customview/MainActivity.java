@@ -2,7 +2,9 @@ package com.view.customview;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -21,6 +23,8 @@ public class MainActivity extends AppCompatActivity
     private DogAdapter dogAdapter;
 
     private List<String> dognameList;
+
+    private TitleView titleView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -46,6 +50,7 @@ public class MainActivity extends AppCompatActivity
 
     private void initView()
     {
+        titleView = findViewById(R.id.tv_actionbar);
         customListView = findViewById(R.id.clv_dogs);
         dogAdapter = new DogAdapter(this, 0, dognameList);
         customListView.setiDeleteListener(new IDeleteListener()
@@ -63,6 +68,17 @@ public class MainActivity extends AppCompatActivity
 
     private void setListener()
     {
-
+        titleView.setBackText("去交通灯");
+        titleView.setTitleText("主页");
+        titleView.setBackButtonOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, LightActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

@@ -16,6 +16,8 @@ public class LightActivity extends AppCompatActivity
 
     private LightView greenLight;
 
+    private TitleView titleView;
+
     private static final int RED = 0;
 
     private static final int YELLOW = 1;
@@ -67,6 +69,7 @@ public class LightActivity extends AppCompatActivity
 
     private void initView()
     {
+        titleView = findViewById(R.id.tv_actionbar);
         redLight = findViewById(R.id.dv_red_light);
         yellowLight = findViewById(R.id.dv_yellow_light);
         greenLight = findViewById(R.id.dv_green_light);
@@ -74,6 +77,8 @@ public class LightActivity extends AppCompatActivity
 
     private void setListener()
     {
+        titleView.setTitleText("交通灯");
+        titleView.setBackText("返回主页");
         /**
          * step1.先亮红灯3s
          * step2.再亮黄灯1s

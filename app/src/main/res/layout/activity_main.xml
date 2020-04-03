@@ -10,8 +10,10 @@
         android:visibility="gone" />
 
     <com.view.customview.TitleView
+        android:id="@+id/tv_actionbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="gone" />
+        android:layout_alignParentTop="true"
+        android:visibility="visible" />
 
 </RelativeLayout>
