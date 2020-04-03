@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.view.customview.LightView
+        android:id="@+id/dv_red_light"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_above="@+id/dv_yellow_light"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:visibility="visible" />
+
+    <com.view.customview.LightView
+        android:id="@+id/dv_yellow_light"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerInParent="true"
+        android:visibility="visible" />
+
+    <com.view.customview.LightView
+        android:id="@+id/dv_green_light"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/dv_yellow_light"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:visibility="visible" />
+</RelativeLayout>
